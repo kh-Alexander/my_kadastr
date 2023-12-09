@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<
+
+<div id="pageLogin" class="page-login b-login">
+
+
+
+                <div id="loginSnilsFrm" class="login-snils-box container" data-bind="visible: loginMode, ifnot: isLoginByDsIsUnavailable">
+                    <form id="authnFrm" method="post" action="/idp/login/pwd/do">
+                        <div class="content-box login-slils-box">
+
+                            <h1 class="base-title b-page-title">
+                                Вход
+                            </h1>
+
+                            <h2 class="step-title b-page-description">
+
+                                Сервисы ФГБУ «ФКП Росреестра»
+
+                            </h2>
+
+                            <div class="data-form flt-lbl-form">
+
+                                <!--mobile phone or email-->
+                                <dl class="flt-lbl-box login" data-bind="visible: login.visible">
+                                    <dt>
+                                        Телефон, почта или СНИЛС
+                                    </dt>
+                                    <dd>
+                                        <input type="text" id="login" name="login" autocomplete="section-login" data-bind="value: login.val" class="ui-inputfield flt-lbl-inp flt_lbl_inp" onfocus="lvm.onLoginFocus();">
+
+                                        <div class="field-error" data-bind="visible: login.msgVisible" style="display: none;">
+                                            <div class="ui-message-error ui-widget">
+                                                    <span class="ui-message-error-detail">
+                                                        Введите телефон, почту или СНИЛС
+                                                    </span>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+
+                                <div class="fields-grid detected" data-bind="visible: detected.visible" style="display: none;">
+                                    <div class="field left avatar-field">
+                                        <div class="user-avatar" data-bind="if: isAvatarVisible"></div>
+                                        <div class="this-user" data-bind="text: detected.val"></div>
+                                    </div>
+                                    <div class="field right click-to-another" data-bind="click: toAnother">
+                                        <a href="javascript: void(0);" class="another-user">
+                                            Другой пользователь
+                                        </a>
+                                    </div>
+                                </div><!-- end .fields-grid -->
+
+                                <!--password-->
+                                <dl class="flt-lbl-box pass">
+                                    <dt>
+                                        Пароль
+                                    </dt>
+                                    <dd>
+                                        <div class="toggle-password js-toggle-pass-visible empty-pass">
+                                            <div class="show">
+                                                Показать
+                                            </div>
+                                            <div class="hide">
+                                                Скрыть
+                                            </div>
+                                        </div>
+                                        <input id="password" name="password" type="password" class="ui-inputfield flt-lbl-inp flt_lbl_inp password-input" data-bind="value: pwd.val">
+                                        <input id="pwd_command" name="command" type="hidden">
+                                        <input id="idType" name="idType" type="hidden">
+                                        <div class="field-error" data-bind="visible: pwd.msgVisible" style="display: none;">
+                                            <div class="ui-message-error ui-widget">
+                                                    <span class="ui-message-error-detail">
+                                                        Введите пароль
+                                                    </span>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+
+                                <div class="line-errs" data-bind="visible: error.msgVisible" style="display: none;">
+                                    <div class="ui-message-error ui-widget">
+                                            <span class="ui-message-error-detail" data-bind="html: error.msg"></span>
+                                    </div>
+                                </div>
+
+                                <div class="pui-tooltip--mobile b-password-hint">
+                                    <div id="mobile-info--password" class="ttip-cont pwd-cont">
+
+                                    </div>
+                                </div>
+
+                                <div class="fields-grid extra has-ufopc" data-bind="css: {'has-ufopc':  ufoPC.visible}">
+
+                                    <div class="field left ufopc" data-bind="visible: ufoPC.visible">
+                                        <ul class="check-list">
+                                            <li class="ufoPC-checkbox">
+                                                <input type="checkbox" name="ufoPC" id="ufoPC" data-bind="checked: ufoPC.checked, click: clearIdCookieWhenChecked">
+                                                <label for="ufoPC">
+                                                    Не запоминать логин и пароль
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+
+                                    <!--button-->
+                                    <div class="line-btns">
+                                        <button id="loginByPwdButton" type="button" class="ui-button ui-widget button-big" data-bind="click: loginByPwd">
+                                            <span class="ui-button-text">
+                                                Войти
+                                            </span>
+                                        </button>
+                                    </div>
+
+                                    <div class="field right recovery">
+                                        <a href="https://esia.gosuslugi.ru/recovery" class="goto-recovery">
+                                            Я не знаю пароль
+                                        </a>
+                                    </div>
+                                </div><!-- end .fields-grid -->
+
+                            </div><!-- end .data-form -->
+
+                        </div><!-- end .content-box -->
+
+                        <div class="reg-box" data-bind="visible: linkGotoReg.visible">
+                            <a href="https://esia.gosuslugi.ru/registration/">Зарегистрируйтесь</a> для полного доступа к&nbsp;сервисам
+                        </div>
+
+                        <div class="enter-list" data-bind="visible: enterList.visible">
+
+                            <a href="javascript: void(0);" class="enter-item" data-bind="click: switchDs">
+                                Вход с помощью электронной подписи
+                            </a>
+
+                        </div>
+
+
+                        <div class="enter-ds-box" data-bind="visible: linkEnterDS.visible" style="display: none;">
+                            <a href="javascript: void(0);" data-bind="click: switchDs">
+                                Вход с помощью электронной подписи
+                            </a>
+                        </div>
+
+
+                    </form>
+                    <div class="teaser">
+                        <div data-teaser-group="esia_noAuth"><div class="banner"><div><img src="https://gu-st.ru/content/Banner/Esia_a1.svg" style="width: 48px;height: 48px;"></div><div style="width: 180px;margin: 16px 0 -1px;letter-spacing: -0.025em;"><a href="https://www.gosuslugi.ru/esia-help" target="_blank">Куда ещё можно войти с паролем от Госуслуг?</a></div></div></div>
+                    </div>
+                </div><!-- end .login-snils-box -->
+
+
+
+
+                <div id="enterDSFrm" class="enter-ds-box container" data-bind="visible: dsMode" style="display: none;">
+                    <div class="content-box">
+
+                        <h1 class="base-title b-page-title">
+                            Вход
+                        </h1>
+
+                        <h2 class="step-title b-page-description">
+
+                            Сервисы ФГБУ «ФКП Росреестра»
+
+                        </h2>
+
+                        <div class="box-icon blitz">
+                            <p class="msg-enter-key">
+                                Присоедините к&nbsp;компьютеру носитель ключа электронной подписи.
+                            </p>
+                        </div>
+
+                        <div class="data-form flt-lbl-form">
+
+
+
+                            <form id="dsFrm" method="post" action="/idp/login/ds/do?cc=bp">
+                                <input id="ds_command" name="command" type="hidden">
+                                <input id="signature" name="signature" type="hidden">
+                            </form>
+
+                            <div class="line-errs" data-bind="visible: dsError.msgVisible" style="display: none;">
+                                <div class="ui-message-error ui-widget">
+                                        <span class="ui-message-error-detail" data-bind="html: dsError.msg"></span>
+                                </div>
+                            </div>
+
+                            <div class="line-btns">
+                                <button type="button" class="ui-button ui-widget button-big" data-bind="click: loginByDs">
+                                        <span class="ui-button-text">
+                                            Готово
+                                        </span>
+                                </button>
+                            </div>
+
+                        </div><!-- end .data-form -->
+                    </div><!-- end .content-box -->
+
+                    <a href="javascript: void(0);" data-bind="click: switchDs">
+                        Назад
+                    </a>
+                </div><!-- end .enter-ds-box -->
+
+                <div class="error-message" data-bind="if: isLoginByDsIsUnavailable"></div>
+
+            </div>
+</html>

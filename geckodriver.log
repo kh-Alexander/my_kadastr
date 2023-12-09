@@ -1,0 +1,21 @@
+1613986996464	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileSkSxiO"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1613986999960	Marionette	INFO	Listening on port 43031
+1613986999975	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: services.settings: 
+  main/cfr-fxa Signature failed  TypeError: NetworkError when attempting to fetch resource.
+1613987010675	Marionette	INFO	Stopped listening on port 43031
+1613993314671	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileecmgqb"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1613993317877	Marionette	INFO	Listening on port 37935
+1613993317980	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://spv.kadastr.ru/, line 6: unreachable code after return statement
+1613993529150	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilemZga2W"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 159: TypeError: date is undefined
+1613993532177	Marionette	INFO	Listening on port 41049
+1613993532260	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://spv.kadastr.ru/, line 6: unreachable code after return statement
+1613993582235	Marionette	INFO	Stopped listening on port 41049
